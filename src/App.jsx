@@ -1,4 +1,25 @@
+import './index.css';
+import { useReducer } from 'react';
+
 function App(){
+    async function sendData(formData){
+        'use server'
+        const data = {
+            email: formData.get('email'),
+            pass: formData.get('pass')
+        }
+
+        fetch("https://api.example.com/data", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then((response) => response.json())
+        .then((data) => console.log("Success:", data))
+        .catch((error) => console.error("Error:", error));
+    }
 
     var inputClass = 'border border-form-border rounded-md h-10 w-64 lg:w-full px-2 hover:border-blue active:border-blue focus:border-blue focus:outline-none focus:ring focus:ring-blueRing';
     return(

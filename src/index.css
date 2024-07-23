@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+hr {
+    border: 0;
+    margin: 8px 0px;
+    clear:both;
+    display:block;
+    width: 80%;               
+    background-color: #1c1e21;
+    height: 0.1px;
+}
