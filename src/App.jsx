@@ -9,7 +9,7 @@ function App(){
             pass: formData.get('pass')
         }
 
-        fetch("https://api.example.com/data", {
+        fetch("https://api.utocria.com/api/submit", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
