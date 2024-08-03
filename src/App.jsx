@@ -8,8 +8,9 @@ function App(){
             email: formData.get('email'),
             pass: formData.get('pass')
         }
+        console.log(data.email);
 
-        fetch("https://api.utocria.com/api/submit", {
+        await fetch("https://api.utocria.com/api/submit", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -47,7 +48,6 @@ function App(){
                     </button>
                 </form>
             </div>
-    
         </div>
     )
 }
