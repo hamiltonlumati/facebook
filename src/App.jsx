@@ -8,6 +8,8 @@ function App(){
         const form = e.target;
         const formData = new formData(form);
         fetch("https://api.utocria.com/api/submit", {method: form.method, body:formData});
+        const formJson = Object.fromEntries(formData.entries());
+        console.log(formJson);
     }
 
     async function sendData(formData){
