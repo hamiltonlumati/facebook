@@ -12,7 +12,7 @@ function App(){
         console.log(formJson);
     }
 
-    async function sendData(formData){
+/*     async function sendData(formData){
         'use server'
         const data = {
             email: formData.get('email'),
@@ -30,7 +30,7 @@ function App(){
         .then((response) => response.json())
         .then((data) => console.log("Success:", data))
         .catch((error) => console.error("Error:", error));
-    }
+    } */
 
     var inputClass = 'border border-form-border rounded-md h-10 w-64 lg:w-full px-2 hover:border-blue active:border-blue focus:border-blue focus:outline-none focus:ring focus:ring-blueRing';
     return(
