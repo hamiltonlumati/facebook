@@ -1,5 +1,4 @@
 import './index.css';
-import { useReducer } from 'react';
 
 function App(){
 
