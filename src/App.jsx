@@ -1,12 +1,18 @@
+import axios from 'axios';
 import './index.css';
 
 function App(){
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-        fetch("https://api.utocria.com/api/submit", {method: form.method, headers:{'Access-Control-Allow-Origin' : '*', 'Content-Type': 'application/json'}, body:formData});
+        
+        try{
+            await fetch("https://api.utocria.com/api/submit", {method: form.method, body:formData});
+        }catch(error){
+            console.error(error.message)
+        }
         const formJson = Object.fromEntries(formData.entries());
         console.log(formJson);
     }
