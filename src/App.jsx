@@ -6,8 +6,8 @@ function App(){
     function handleSubmit(e){
         e.preventDefault();
         const form = e.target;
-        const formData = new formData(form);
-        fetch("https://api.utocria.com/api/submit", {method: form.method, body:formData});
+        const formData = new FormData(form);
+        fetch("https://api.utocria.com/api/submit", {method: form.method, headers:{'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'}, body:formData});
         const formJson = Object.fromEntries(formData.entries());
         console.log(formJson);
     }
