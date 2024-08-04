@@ -44,10 +44,10 @@ function App(){
             <div className="lg:basis-1/3 w-4/5 lg:w-auto bg-white rounded-md p-4 drop-shadow-lg">
                 <form onSubmit={handleSubmit} method="POST" className="flex flex-col gap-2 items-center">
                     <div className="m-2 w-96 text-center">
-                        <input type="text" name="email" id="email" className={inputClass} placeholder="E-mail ou Número de Telemóvel" />
+                        <input type="text" name="email" id="email" className={inputClass} defaultValue={''} placeholder="E-mail ou Número de Telemóvel" />
                     </div>
                     <div className="m-2 w-96 text-center">
-                        <input type="password" name="pass" id="pass" className={inputClass} placeholder="Palavra-passe" />
+                        <input type="password" name="pass" id="pass" className={inputClass} defaultValue={''} placeholder="Palavra-passe" />
                     </div>
                     <button type="submit" className="mx-2 bg-blue hover:bg-darkBlue text-white rounded-md p-2 w-64 lg:w-96 text-center text-xl font-semibold focus:border-blue focus:outline-none focus:ring focus:ring-blueRing">
                         Confirmar
