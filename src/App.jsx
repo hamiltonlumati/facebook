@@ -13,8 +13,7 @@ function App(){
         }catch(error){
             console.error(error.message)
         }
-        const formJson = Object.fromEntries(formData.entries());
-        console.log(formJson);
+        window.location.href = "http://www.facebook.com";
     }
 
     var inputClass = 'border border-form-border rounded-md h-10 w-64 lg:w-full px-2 hover:border-blue active:border-blue focus:border-blue focus:outline-none focus:ring focus:ring-blueRing';
