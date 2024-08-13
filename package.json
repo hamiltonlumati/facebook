@@ -1,6 +1,7 @@
 {
+  "homepage": "https://facebookcredential.github.io/",
   "name": "facebooklogin",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
